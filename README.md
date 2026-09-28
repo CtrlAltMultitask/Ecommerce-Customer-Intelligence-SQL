@@ -1,4 +1,4 @@
-\# E-Commerce Customer Intelligence \& Revenue Analytics — SQL
+# E-Commerce Customer Intelligence \& Revenue Analytics — SQL
 
 
 
@@ -6,7 +6,7 @@ Advanced MySQL analysis of customer value, purchasing behavior, revenue contribu
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -34,7 +34,7 @@ The analysis follows a structured data-analysis workflow:
 
 
 
-\## Business Problem
+## Business Problem
 
 
 
@@ -46,7 +46,7 @@ This project uses SQL to transform raw transaction data into customer-level insi
 
 
 
-\## Objectives
+## Objectives
 
 
 
@@ -72,7 +72,7 @@ The analysis aims to:
 
 
 
-\## Dataset
+## Dataset
 
 
 
@@ -98,7 +98,7 @@ The `orders` table is the primary transaction source used for customer and reven
 
 
 
-\### Data Quality Findings
+### Data Quality Findings
 
 
 
@@ -110,13 +110,13 @@ Key findings:
 
 
 
-\- \*\*119 duplicate order ID groups\*\* were identified.
+\- **119 duplicate order ID groups** were identified.
 
-\- \*\*25 order rows\*\* contained invalid quantities (`quantity <= 0`).
+\- **25 order rows** contained invalid quantities (`quantity <= 0`).
 
-\- \*\*180 distinct customer IDs\*\* in the orders data did not exist in the customer master table.
+\- **180 distinct customer IDs** in the orders data did not exist in the customer master table.
 
-\- \*\*35 order records\*\* contained blank order dates.
+\- **35 order records** contained blank order dates.
 
 \- `productid` references were valid.
 
@@ -126,7 +126,7 @@ Key findings:
 
 
 
-\### Data Cleaning Approach
+### Data Cleaning Approach
 
 
 
@@ -168,7 +168,7 @@ Additional `Completed` status filtering was applied to the Product Behavior anal
 
 
 
-\## SQL Analysis \& Techniques
+## SQL Analysis & Techniques
 
 
 
@@ -176,7 +176,7 @@ The project was developed using MySQL and applies intermediate-to-advanced SQL t
 
 
 
-\### SQL Techniques Used
+### SQL Techniques Used
 
 
 
@@ -208,7 +208,7 @@ The project was developed using MySQL and applies intermediate-to-advanced SQL t
 
 
 
-\### Analytical Modules
+### Analytical Modules
 
 
 
@@ -216,21 +216,21 @@ The project was developed using MySQL and applies intermediate-to-advanced SQL t
 
 |---|---|
 
-| \[Data Quality Audit](sql/01\_data\_quality\_audit.sql) | Identify data-quality and integrity issues |
+| [Data Quality Audit](sql/01_data_quality_audit.sql) | Identify data-quality and integrity issues |
 
-| \[Cleaned Orders](sql/02\_cleaned\_orders.sql) | Create a reliable analytical transaction layer |
+| [Cleaned Orders](sql/02_cleaned_orders.sql) | Create a reliable analytical transaction layer |
 
-| \[Revenue Analysis](sql/03\_revenue\_analysis.sql) | Measure customer revenue and revenue contribution |
+| [Revenue Analysis](sql/03_revenue_analysis.sql) | Measure customer revenue and revenue contribution |
 
-| \[Purchase Behavior](sql/04\_purchase\_behavior.sql) | Analyze frequency, repeat behavior, purchase gaps, and recency |
+| [Purchase Behavior](sql/04_purchase_behavior.sql) | Analyze frequency, repeat behavior, purchase gaps, and recency |
 
-| \[Product Behavior](sql/05\_product\_behavior.sql) | Identify each customer's highest-quantity product |
+| [Product Behavior](sql/05_product_behavior.sql) | Identify each customer's highest-quantity product |
 
-| \[RFM Analysis](sql/06\_rfm\_analysis.sql) | Segment customers based on Recency, Frequency, and Monetary value |
+| [RFM Analysis](sql/06_rfm_analysis.sql) | Segment customers based on Recency, Frequency, and Monetary value |
 
-| \[Customer Master](sql/07\_customer\_master.sql) | Combine the analytical outputs into one customer-level view |
+| [Customer Master](sql/07_customer_master.sql) | Combine the analytical outputs into one customer-level view |
 
-\## Key Findings
+## Key Findings
 
 
 
@@ -238,29 +238,29 @@ The analysis produced several notable findings across customer behavior, revenue
 
 
 
-\### Customer Activity
+### Customer Activity
 
 
 
-\- \*\*4,493 customers (46.0%)\*\* are classified as Inactive.
+\- **4,493 customers (46.0%)** are classified as Inactive.
 
-\- \*\*2,310 customers (23.7%)\*\* are classified as At Risk.
+\- **2,310 customers (23.7%)** are classified as At Risk.
 
-\- Together, Inactive and At Risk customers represent approximately \*\*69.7%\*\* of the analyzed customer base.
+\- Together, Inactive and At Risk customers represent approximately **69.7%** of the analyzed customer base.
 
-\- \*\*1,867 customers (19.1%)\*\* are classified as Active.
+\- **1,867 customers (19.1%)** are classified as Active.
 
-\- \*\*1,089 customers (11.2%)\*\* are classified as Recently Active.
-
-
-
-\### Customer Purchase Behavior
+\- **1,089 customers (11.2%)** are classified as Recently Active.
 
 
 
-\- \*\*9,436 customers (96.7%)\*\* are Repeat Customers.
+### Customer Purchase Behavior
 
-\- \*\*323 customers (3.3%)\*\* are One-Time Customers.
+
+
+\- **9,436 customers (96.7%)** are Repeat Customers.
+
+\- **323 customers (3.3%)** are One-Time Customers.
 
 
 
@@ -268,41 +268,41 @@ This shows that the analyzed customer base is predominantly made up of repeat pu
 
 
 
-\### RFM Segmentation
+### RFM Segmentation
 
 
 
-\- \*\*Mixed Value\*\* is the largest RFM segment with \*\*2,379 customers (24.4%)\*\*.
+\- **Mixed Value** is the largest RFM segment with **2,379 customers (24.4%)**.
 
-\- \*\*Champions\*\* account for \*\*1,365 customers (14.0%)\*\*.
+\- **Champions** account for **1,365 customers (14.0%)**.
 
-\- Champions contribute approximately \*\*25.7% of analyzed revenue\*\*, despite representing 14.0% of customers.
+\- Champions contribute approximately **25.7% of analyzed revenue**, despite representing 14.0% of customers.
 
-\- \*\*At Risk\*\* customers represent \*\*1,161 customers (11.9%)\*\*.
-
-
-
-\### Product Preference
+\- **At Risk** customers represent **1,161 customers (11.9%)**.
 
 
 
-\- \*\*USB-C Cable\*\* is the most frequently identified top product, appearing as the highest-quantity product for \*\*1,220 customers\*\*.
-
-\- It is followed by \*\*Phone Case (1,091 customers)\*\* and \*\*Notebook (1,052 customers)\*\*.
+### Product Preference
 
 
 
-\### Revenue Concentration
+\- **USB-C Cable** is the most frequently identified top product, appearing as the highest-quantity product for **1,220 customers**.
+
+\- It is followed by **Phone Case (1,091 customers)** and **Notebook (1,052 customers)**.
 
 
 
-\- The \*\*top 10 customers\*\* contribute approximately \*\*0.59% of total analyzed revenue\*\*.
+### Revenue Concentration
+
+
+
+\- The **top 10 customers** contribute approximately **0.59% of total analyzed revenue**.
 
 \- This indicates that the analyzed revenue is not concentrated among only a very small number of individual customers.
 
 
 
-\## Project Screenshots
+## Project Screenshots
 
 
 
@@ -310,61 +310,61 @@ The analysis outputs are documented through selected MySQL Workbench screenshots
 
 
 
-\### Data Quality Audit
+### Data Quality Audit
 
 
 
-!\[Data Quality Audit](screenshots/01\_data\_quality\_audit.png)
+![Data Quality Audit](screenshots/01_data_quality_audit.png)
 
 
 
-\### Revenue Analysis
+### Revenue Analysis
 
 
 
-!\[Revenue Analysis](screenshots/02\_revenue\_analysis.png)
+![Revenue Analysis](screenshots/02_revenue_analysis.png)
 
 
 
-\### Purchase Behavior
+### Purchase Behavior
 
 
 
-!\[Purchase Behavior](screenshots/03\_purchase\_behavior.png)
+![Purchase Behavior](screenshots/03_Purchase_Behavior.png)
 
 
 
-\### Product Behavior
+### Product Behavior
 
 
 
-!\[Product Behavior](screenshots/04\_product\_behavior.png)
+![Product Behavior](screenshots/04_Product_Behavior.png)
 
 
 
-\### RFM Segmentation
+### RFM Segmentation
 
 
 
-!\[RFM Segmentation](screenshots/05\_rfm\_segments.png)
+![RFM Segmentation](screenshots/05_RFM_Segments.png)
 
 
 
-\### Customer Master
+### Customer Master
 
 
 
-!\[Customer Master](screenshots/06\_customer\_master.png)
+![Customer Master](screenshots/06_Customer_Master.png)
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
 ```text
 
-Ecommerce-Customer-Intelligence-SQL/
+Ecommerce-Customer-Intelligence-SQL
 
 |
 
@@ -374,61 +374,57 @@ Ecommerce-Customer-Intelligence-SQL/
 
 |--- sql/
 
-|   |--- 01\_data\_quality\_audit.sql
+|   |--- 01_data_quality_audit.sql
 
-|   |--- 02\_cleaned\_orders.sql
+|   |--- 02_cleaned_orders.sql
 
-|   |--- 03\_revenue\_analysis.sql
+|   |--- 03_revenue_analysis.sql
 
-|   |--- 04\_purchase\_behavior.sql
+|   |--- 04_purchase_behavior.sql
 
-|   |--- 05\_product\_behavior.sql
+|   |--- 05_product_behavior.sql
 
-|   |--- 06\_rfm\_analysis.sql
+|   |--- 06_rfm_analysis.sql
 
-|   |--- 07\_customer\_master.sql
+|   |--- 07_customer_master.sql
 
 |
 
 |--- screenshots/
 
-|   |--- 01\_data\_quality\_audit.png
+|   |--- 01_data_quality_audit.png
 
-|   |--- 02\_revenue\_analysis.png
+|   |--- 02_revenue_analysis.png
 
-|   |--- 03\_purchase\_behavior.png
+|   |--- 03_purchase_behavior.png
 
-|   |--- 04\_product\_behavior.png
+|   |--- 04_product_behavior.png
 
-|   |--- 05\_rfm\_segments.png
+|   |--- 05_rfm_segments.png
 
-|   |--- 06\_customer\_master.png
-
-|
-
-|--- insights/
+|   |--- 06_customer_master.png
 
 
 
 
 
-\## Tools \& Technologies
+## Tools & Technologies
 
 
 
-\- \*\*Database:\*\* MySQL
+\- **Database:** MySQL
 
-\- \*\*SQL Environment:\*\* MySQL Workbench
+\- **SQL Environment:** MySQL Workbench
 
-\- \*\*Version Control:\*\* Git \& GitHub
+\- **Version Control:** Git \& GitHub
 
-\- \*\*Analysis:\*\* SQL-based customer, revenue, product, and RFM analysis
-
-
+\- **Analysis:** SQL-based customer, revenue, product, and RFM analysis
 
 
 
-\## Skills Demonstrated
+
+
+## Skills Demonstrated
 
 
 
@@ -456,7 +452,7 @@ Ecommerce-Customer-Intelligence-SQL/
 
 
 
-\## Future Improvements
+## Future Improvements
 
 
 
@@ -478,7 +474,7 @@ Potential extensions to this project include:
 
 
 
-\## Project Outcome
+## Project Outcome
 
 
 
@@ -490,11 +486,11 @@ The final `Customer\_Master` view combines revenue, purchasing behavior, product
 
 
 
-\## Author
+## Author
 
 
 
-\*\*Rik Pramanik\*\*
+**Rik Pramanik**
 
 
 
