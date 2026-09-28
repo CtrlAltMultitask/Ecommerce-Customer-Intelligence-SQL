@@ -338,7 +338,7 @@ The analysis outputs are documented through selected MySQL Workbench screenshots
 
 
 
-![Product Behavior](screenshots/04_Product_Behavior.png)
+![Product Behavior](screenshots/04_Prodcut_Behavior.png)
 
 
 
